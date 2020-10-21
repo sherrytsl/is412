@@ -22,14 +22,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <!-- modernizr css -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
-    <style>
-        th, td {
-        padding: 15px;
-        }
-    </style>
 </head>
-
-
 
 <body>
     <!--[if lt IE 8]>
@@ -208,13 +201,13 @@
                                 <table>
                                     <tr><h4 class="header-title">Zone 1</h4></tr>
                                     <tr>
-                                        <td >
+                                        <td>
                                             <button type="button" class="btn btn-primary mb-3" id = button style="background-color:green;color:white;">Seat 1</button>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
                                             <br>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-                                        </td>
+</td>
                                         <td></td>
                                         <td>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
@@ -222,15 +215,14 @@
                                             <br>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-                                        </td>
-                                        <td></td>
+</td>
                                         <td>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
                                             <br>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-                                        </td>
+</td>
                                       </tr>  
                                 </table>
 
@@ -239,90 +231,60 @@
                                 </script>
                                 
 
+                                
+
                             </div>
                         </div>
                     </div>
-
-                    <?php
-                        echo "My first PHP script!";
-                    ?>
                     
                     <!-- General button -->
                     <div class="mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <table>
-                                    <tr><h4 class="header-title">Zone 2</h4></tr>
-                                    <tr>
-                                        <td >
-                                            <button type="button" class="btn btn-primary mb-3" id = button style="background-color:green;color:white;">Seat 1</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
-                                            <br>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-                                        </td>
-                                        <td></td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                            <br>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 5</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 6</button>
-                                        </td>
-                                        <td></td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
-                                            <br>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-                                        </td>
-                                      </tr>  
-                                </table>
+                                <h4 class="header-title"> .</h4>
+                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
+                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
+                                <br>
+                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
+                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
                             </div>
                         </div>
                     </div>
 
                     <!-- General button -->
-                    <div class="mt-5">
+                    <div class=" col-lg-6 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <table>
-                                    <tr><h4 class="header-title">Zone 2</h4></tr>
-                                    <tr>
-                                        <td >
-                                            <button type="button" class="btn btn-primary mb-3" id = button style="background-color:green;color:white;">Seat 1</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
-                                            <br>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-                                        </td>
-                                        <td></td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>                                         
-                                            <br>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-
-                                        </td>
-                                        <td></td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
-                                            <br>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-                                        </td>
-                                      </tr>  
-                                </table>
+                                <h4 class="header-title">Zone 2</h4>
+                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
+                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
+                                <br>
+                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
+                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
                             </div>
                         </div>
                     </div>
 
-                </div>
+
+
+                </div>    
+                
+                <div class="row">
+                    <!-- General button -->
+                    <div class="mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title">Zone 3</h4>
+                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
+                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
+                                <br>
+                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
+                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+
 
 
 
