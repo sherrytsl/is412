@@ -210,10 +210,14 @@
                                 <table>
                                     <tr><h4 class="header-title">Manpower per Zone</h4></tr>
                                     <tr>
-                                        Zone: <select name = "zone">
-                                            <option value = "1">1</option>
-                                            <option value = "2">2</option>
-                                        </select>
+                                        Zone: 
+                                        <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">
+                                            Select Zone
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">1</a>
+                                            <a class="dropdown-item" href="#">2</a>
+                                        </div>
                                         <br>
                                         
                                         <table>
@@ -223,22 +227,34 @@
                                                 </td>
 
                                                 <td>
-                                                <input name = "employee[]"
-                                                type = "checkbox"
-                                                value = "alan" />Alan
-                                                <br>
-                                                <input name = "employee[]"
-                                                type = "checkbox"
-                                                value = "kaixian" />Kai Xian
-                                                <br>
-                                                <input name = "employee[]"
-                                                type = "checkbox"
-                                                value = "josh" />Josh
+                                                <!-- <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" checked class="custom-control-input" id="customCheck1">
+                                                <label class="custom-control-label" for="customCheck1">checked Checkbox</label>
+                                            </div> -->
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                    <label class="custom-control-label" for="customCheck1">Kai Xian</label>
+                                                </div>
+
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                    <label class="custom-control-label" for="customCheck1">Josh</label>
+                                                </div>
+
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                    <label class="custom-control-label" for="customCheck1">Clement</label>
+                                                </div>
+
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                    <label class="custom-control-label" for="customCheck1">Heng Yu</label>
+                                                </div>
                                                 </td>
                                             </tr>
                                         </table>
 
-                                        <input type="submit" value="Save">
+                                        <button type="button" class="btn btn-outline-primary mb-3">Save</button>
                                     </tr>  
                                 </table>
 
