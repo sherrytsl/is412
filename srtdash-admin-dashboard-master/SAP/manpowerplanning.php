@@ -60,26 +60,7 @@
                                 <ul class="collapse">
                                     <li><a href="starter.php">Floor Layout Plan</a></li>
                                     <li class="active"><a href="#">Manpower Planning</a></li>
-                                    <li><a href="#">Menuitem 3</a></li>
                                     </ul>
-                            </li>
-                            <li><a href="#"><i class="ti-map-alt"></i><span>Not expanding</span></a></li>
-                            <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-align-left"></i>
-                                    <span>Multi
-                                        level menu</span></a>
-                                <ul class="collapse">
-                                    <li><a href="#">Item level (1)</a></li>
-                                    <li><a href="#">Item level (1)</a></li>
-                                    <li><a href="#" aria-expanded="true">Item level (1)</a>
-                                        <ul class="collapse">
-                                            <li><a href="#">Item level (2)</a></li>
-                                            <li><a href="#">Item level (2)</a></li>
-                                            <li><a href="#">Item level (2)</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Item level (1)</a></li>
-                                </ul>
                             </li>
                         </ul>
                     </nav>

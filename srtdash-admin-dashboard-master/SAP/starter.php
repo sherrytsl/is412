@@ -60,27 +60,9 @@
                                 <ul class="collapse">
                                     <li class="active"><a href="#">Floor Layout Plan</a></li>
                                     <li><a href="employees.php">Manpower Planning</a></li>
-                                    <li><a href="#">Menuitem 3</a></li>
                                 </ul>
                             </li>
                             <li><a href="#"><i class="ti-map-alt"></i><span>Not expanding</span></a></li>
-                            <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-align-left"></i>
-                                    <span>Multi
-                                        level menu</span></a>
-                                <ul class="collapse">
-                                    <li><a href="#">Item level (1)</a></li>
-                                    <li><a href="#">Item level (1)</a></li>
-                                    <li><a href="#" aria-expanded="true">Item level (1)</a>
-                                        <ul class="collapse">
-                                            <li><a href="#">Item level (2)</a></li>
-                                            <li><a href="#">Item level (2)</a></li>
-                                            <li><a href="#">Item level (2)</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Item level (1)</a></li>
-                                </ul>
-                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -198,30 +180,8 @@
                 <!-- MAIN CONTENT GOES HERE -->
 
 
-                <!-- button srea start -->
-                <div class="row">
-                    <!-- General button -->
-                    <div class=" mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <table>
-                                    <tr><h4 class="header-title">Zone 1</h4></tr>
-                                    <tr>
-                                        <form action="">
-                                        <label for="fname">First name:</label><br>
-                                    <input type="text" id="fname" name="fname"><br>
-                                    <label for="lname">Last name:</label><br>
-                                    <input type="text" id="lname" name="lname">
-                                        </form>  
-                                    </tr>  
-                                </table>
-                                
 
-                                
-
-                            </div>
-                        </div>
-                    </div>
+                
                 
                 
                 <!-- button srea start -->
