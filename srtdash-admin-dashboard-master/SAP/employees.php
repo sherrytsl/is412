@@ -22,6 +22,15 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <!-- modernizr css -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <style>
+        th, td {
+            padding: 10px;
+        }
+        /* button{
+            height: 75px;
+            width: 100px;
+        } */
+    </style>
 </head>
 
 <body>
@@ -50,9 +59,9 @@
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Dashboard</span></a>
                                 <ul class="collapse">
                                     <li><a href="starter.php">Floor Layout Plan</a></li>
-                                    <li class="active"><a href="#">Employee Details</a></li>
+                                    <li class="active"><a href="#">Manpower Planning</a></li>
                                     <li><a href="#">Menuitem 3</a></li>
-                                </ul>
+                                    </ul>
                             </li>
                             <li><a href="#"><i class="ti-map-alt"></i><span>Not expanding</span></a></li>
                             <li>
@@ -164,10 +173,10 @@
                 <div class="row align-items-center">
                     <div class="col-sm-6">
                         <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Dashboard</h4>
+                            <h4 class="page-title pull-left">Manpower Planning</h4>
                             <ul class="breadcrumbs pull-left">
                                 <li><a href="index.html">Home</a></li>
-                                <li><span>Dashboard</span></li>
+                                <li><span>Manpower Planning</span></li>
                             </ul>
                         </div>
                     </div>
@@ -199,36 +208,43 @@
                         <div class="card">
                             <div class="card-body">
                                 <table>
-                                    <tr><h4 class="header-title">Zone 1</h4></tr>
+                                    <tr><h4 class="header-title">Manpower per Zone</h4></tr>
                                     <tr>
-                                        <td>
-                                            <button type="button" class="btn btn-primary mb-3" id = button style="background-color:green;color:white;">Seat 1</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
-                                            <br>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-</td>
-                                        <td></td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
-                                            <br>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
-                                            <br>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-</td>
-                                      </tr>  
+                                        Zone: <select name = "zone">
+                                            <option value = "1">1</option>
+                                            <option value = "2">2</option>
+                                        </select>
+                                        <br>
+                                        
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                Employees:
+                                                </td>
+
+                                                <td>
+                                                <input name = "employee[]"
+                                                type = "checkbox"
+                                                value = "alan" />Alan
+                                                <br>
+                                                <input name = "employee[]"
+                                                type = "checkbox"
+                                                value = "kaixian" />Kai Xian
+                                                <br>
+                                                <input name = "employee[]"
+                                                type = "checkbox"
+                                                value = "josh" />Josh
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <input type="submit" value="Save">
+                                    </tr>  
                                 </table>
 
-                                <script>
+                                <!-- <script>
                                     document.getElementById("button").style.background='red';
-                                </script>
+                                </script> -->
                                 
 
                                 
@@ -236,17 +252,45 @@
                             </div>
                         </div>
                     </div>
-                    
+
+                </div>   
+                <div class="row">
                     <!-- General button -->
-                    <div class="mt-5">
+                    <div class=" mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title"> .</h4>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
-                                <br>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
+                                <table>
+                                    <tr><h4 class="header-title">Zone 1</h4></tr>
+                                    <tr>
+                                        <td >
+                                            <button type="button" class="btn btn-primary mb-3" id = button style="background-color:green;color:white;">Table 1</button>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 2</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 3</button>
+                                            <br>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 4</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 5</button>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 6</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 7</button>
+                                            <br>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 8</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 9</button>
+                                        </td>
+                                      </tr>  
+                                </table>
+
+                                <!-- <script>
+                                    document.getElementById("button").style.background='red';
+                                </script> -->
+                                
+
+                                
+
                             </div>
                         </div>
                     </div>
@@ -255,31 +299,32 @@
                     <div class=" col-lg-6 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Zone 2</h4>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
-                                <br>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                </div>    
-                
-                <div class="row">
-                    <!-- General button -->
-                    <div class="mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Zone 3</h4>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
-                                <br>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
+                                <table>
+                                    <tr><h4 class="header-title">Zone 2</h4></tr>
+                                    <tr>
+                                        <td >
+                                            <button type="button" class="btn btn-primary mb-3" id = button style="background-color:green;color:white;">Table 1</button>
+                                            <br>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 2</button>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 3</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 4</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 5</button>
+                                            <br>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 6</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 7</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 8</button>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 9</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 10</button>
+                                            
+                                        </td>
+                                      </tr>  
+                                </table>
                             </div>
                         </div>
                     </div>
