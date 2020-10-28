@@ -59,7 +59,8 @@
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Dashboard</span></a>
                                 <ul class="collapse">
                                     <li class="active"><a href="#">Floor Layout Plan</a></li>
-                                    <li><a href="employees.php">Manpower Planning</a></li>
+                                    <li><a href="manpowerplanning.php">Manpower Planning</a></li>
+                                    <li><a href="#">Menuitem 3</a></li>
                                 </ul>
                             </li>
                             <li><a href="#"><i class="ti-map-alt"></i><span>Not expanding</span></a></li>
@@ -181,7 +182,7 @@
 
 
 
-                
+
                 
                 
                 <!-- button srea start -->
