@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <!-- modernizr css -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
-<<<<<<< Updated upstream
     <style>
         th, td {
             padding: 10px;
@@ -32,8 +31,6 @@
             width: 100px;
         }
     </style>
-=======
->>>>>>> Stashed changes
 </head>
 
 <body>
@@ -201,7 +198,30 @@
                 <!-- MAIN CONTENT GOES HERE -->
 
 
+                <!-- button srea start -->
+                <div class="row">
+                    <!-- General button -->
+                    <div class=" mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <table>
+                                    <tr><h4 class="header-title">Zone 1</h4></tr>
+                                    <tr>
+                                        <form action="">
+                                        <label for="fname">First name:</label><br>
+                                    <input type="text" id="fname" name="fname"><br>
+                                    <label for="lname">Last name:</label><br>
+                                    <input type="text" id="lname" name="lname">
+                                        </form>  
+                                    </tr>  
+                                </table>
+                                
 
+                                
+
+                            </div>
+                        </div>
+                    </div>
                 
                 
                 <!-- button srea start -->
