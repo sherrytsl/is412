@@ -128,7 +128,7 @@
                                         <a href="#" class="notify-item">
                                             <div class="notify-thumb"><i class="ti-comments-smiley btn-info"></i></div>
                                             <div class="notify-text">
-                                                <p>New Commetns On Post</p>
+                                                <p>New Comments On Post</p>
                                                 <span>30 Seconds ago</span>
                                             </div>
                                         </a>
@@ -210,14 +210,20 @@
                                 <table>
                                     <tr><h4 class="header-title">Manpower per Zone</h4></tr>
                                     <tr>
-                                        Zone: 
-                                        <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">
-                                            Select Zone
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">1</a>
-                                            <a class="dropdown-item" href="#">2</a>
-                                        </div>
+                                        <td>
+                                            Zone:
+                                        </td>
+                                        <td>
+                                            <div class="dropdown col-lg-6 col-md-4 col-sm-6">
+                                                <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">
+                                                    1
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#">1</a>
+                                                    <a class="dropdown-item" href="#">2</a>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <br>
                                         
                                         <table>
@@ -232,23 +238,23 @@
                                                 <label class="custom-control-label" for="customCheck1">checked Checkbox</label>
                                             </div> -->
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                    <label class="custom-control-label" for="customCheck1">Kai Xian</label>
+                                                    <input type="checkbox" checked class="custom-control-input" id="kaixian">
+                                                    <label class="custom-control-label" for="kaixian">Kai Xian</label>
                                                 </div>
 
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                    <label class="custom-control-label" for="customCheck1">Josh</label>
+                                                    <input type="checkbox" checked class="custom-control-input" id="josh">
+                                                    <label class="custom-control-label" for="josh">Josh</label>
                                                 </div>
 
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                    <label class="custom-control-label" for="customCheck1">Clement</label>
+                                                    <input type="checkbox" class="custom-control-input" id="clement">
+                                                    <label class="custom-control-label" for="clement">Clement</label>
                                                 </div>
 
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                    <label class="custom-control-label" for="customCheck1">Heng Yu</label>
+                                                    <input type="checkbox" class="custom-control-input" id="hengyu">
+                                                    <label class="custom-control-label" for="hengyu">Heng Yu</label>
                                                 </div>
                                                 </td>
                                             </tr>
