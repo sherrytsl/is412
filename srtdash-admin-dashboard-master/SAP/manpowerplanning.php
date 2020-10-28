@@ -58,8 +58,9 @@
                             <li class="active">
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Dashboard</span></a>
                                 <ul class="collapse">
-                                    <li><a href="starter.php">Floor Layout Plan</a></li>
-                                    <li class="active"><a href="#">Manpower Planning</a></li>
+                                    <li><a href="#">Analytics Dashboard</a></li>
+                                    <li class="active"><a href="#">Floor Layout Plan</a></li>
+                                    <li><a href="manpowerplanning.php">Manpower Planning</a></li>
                                     </ul>
                             </li>
                         </ul>
@@ -67,7 +68,7 @@
                 </div>
             </div>
         </div>
-        <!-- sidebar menu area end -->
+
         <!-- main content area start -->
         <div class="main-content">
             <!-- header area start -->
