@@ -213,47 +213,25 @@
                                 <table>
                                     <tr><h4 class="header-title">Zone 1</h4></tr>
                                     <tr>
-<<<<<<< Updated upstream
                                         <td >
                                             <button type="button" class="btn btn-primary mb-3" id = button style="background-color:green;color:white;">Table 1</button>
                                         </td>
-=======
-                                        <td>
-                                            <button type="button" class="btn btn-primary mb-3" id = button style="background-color:green;color:white;">Seat 1</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
-                                            <br>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-</td>
->>>>>>> Stashed changes
                                         <td></td>
                                         <td>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 2</button>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 3</button>
                                             <br>
-<<<<<<< Updated upstream
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 4</button>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 5</button>
                                         </td>
                                         <td></td>
-=======
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-</td>
->>>>>>> Stashed changes
                                         <td>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 6</button>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 7</button>
                                             <br>
-<<<<<<< Updated upstream
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 8</button>
                                             <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 9</button>
                                         </td>
-=======
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-</td>
->>>>>>> Stashed changes
                                       </tr>  
                                 </table>
 
@@ -267,29 +245,11 @@
                             </div>
                         </div>
                     </div>
-<<<<<<< Updated upstream
-=======
-                    
-                    <!-- General button -->
-                    <div class="mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title"> .</h4>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
-                                <br>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-                            </div>
-                        </div>
-                    </div>
->>>>>>> Stashed changes
 
                     <!-- General button -->
                     <div class=" col-lg-6 mt-5">
                         <div class="card">
                             <div class="card-body">
-<<<<<<< Updated upstream
                                 <table>
                                     <tr><h4 class="header-title">Zone 2</h4></tr>
                                     <tr>
@@ -316,33 +276,6 @@
                                         </td>
                                       </tr>  
                                 </table>
-=======
-                                <h4 class="header-title">Zone 2</h4>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
-                                <br>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                </div>    
-                
-                <div class="row">
-                    <!-- General button -->
-                    <div class="mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Zone 3</h4>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 1</button>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 2</button>
-                                <br>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 3</button>
-                                <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Seat 4</button>
->>>>>>> Stashed changes
                             </div>
                         </div>
                     </div>
