@@ -49,8 +49,8 @@
                             <li class="active">
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Dashboard</span></a>
                                 <ul class="collapse">
-                                    <li class="active"><a href="#">Active Menu Item</a></li>
-                                    <li><a href="#">Menuitem 2</a></li>
+                                    <li class="active"><a href="#">Floor Layout Plan</a></li>
+                                    <li><a href="employees.php">Employee Details</a></li>
                                     <li><a href="#">Menuitem 3</a></li>
                                 </ul>
                             </li>
