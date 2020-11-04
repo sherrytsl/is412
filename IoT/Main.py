@@ -88,3 +88,23 @@ while True:
             timer_sit = None
             timer_leave = None
             timer_clean = None
+
+        # UPDATE
+        # db.food_Table.update(
+        #     {"table_id" : table_id},
+        #     {$set: {"table_status" : status}
+        #     }
+        #     )
+
+        # INSERT
+        # clean_Records_sendDB = {
+        #     "timestamp" : timer_clean,
+        #     "eid" : cleaner_id,
+        #     "name" : cleaner_name,
+        #     "table_id" : table_id,
+        #     "time_sat" : timer_sit,
+        #     "sitting_duration" : sitting_time,
+        #     "cleaning_delay" : cleaning_time
+        # }
+
+        # Waiting for JSON to be sent over has yet to be coded. Last left at 4.15 PM, 4/11

@@ -8,9 +8,7 @@ db=client["EBS-test"]
 #Step 2: Create sample data
 data = [{
 "eid": 1,
-"firstName": "Kare En",
-"lastName": "Lim",
-"age": 59,
+"name": "Kare En",
 "assignedZone": [1, 2, 3],
 "employeeType": "Cleaner",
 "password": "karen123"
