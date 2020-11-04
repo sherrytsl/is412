@@ -58,9 +58,9 @@
                             <li class="active">
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Dashboard</span></a>
                                 <ul class="collapse">
-                                    <li><a href="analyticsdashboard.php">Analytics Dashboard</a></li>
+                                    <li class="active"><a href="#">Analytics Dashboard</a></li>
                                     <li><a href="floorlayout.php">Floor Layout Plan</a></li>
-                                    <li class="active"><a href="#">Manpower Planning</a></li>
+                                    <li><a href="manpowerplanning.php">Manpower Planning</a></li>
                                     </ul>
                             </li>
                         </ul>
