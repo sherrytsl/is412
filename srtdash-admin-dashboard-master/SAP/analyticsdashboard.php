@@ -31,6 +31,93 @@
             width: 100px;
         } */
     </style>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load("current", {packages:["corechart","bar"]});
+            google.charts.setOnLoadCallback(drawChart);
+            google.charts.setOnLoadCallback(drawChart2);
+            google.charts.setOnLoadCallback(drawChart3);
+
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                ['Zone', 'Number of Tables'],
+                ['1',     12],
+                ['2',      16],
+                ['3',  9],
+                ['4', 14],
+                ['5',    6]
+                ]);
+
+                var options = {
+                title: 'No. of Tables per Zone',
+                pieHole: 0.5,
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                chart.draw(data, options);
+            }
+
+            function drawChart2() {
+                var data = google.visualization.arrayToDataTable([
+                ['Month', 'Joe', 'Trump', 'Hillary', 'Obama', 'Bernie'],
+                ['Jan',  5, 5,  3, 8,  6],
+                ['Feb',  6, 3,  2, 7,  5],
+                ['Mar',  4, 7,  5, 4,  4],
+                ['Apr',  5, 6,  4, 7,  2],
+                ['May',  4, 7,  5, 4,  4],
+                ['June',  5, 6,  6, 3,  3],
+                ['July',  3, 5,  7, 4,  2],
+                ['Aug',  3, 6,  6, 5,  2],
+                ['Sep',  2, 5,  6, 4,  2],
+                ['Oct',  3, 6,  6, 5,  3]
+                ]);
+
+                var options = {
+                title: 'Average Cleaning Time (Month)',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+                };
+
+                var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+                chart.draw(data, options);
+            }
+
+            function drawChart3() {
+                var data = new google.visualization.arrayToDataTable([
+                ['Joe', 'Quantity'],
+                ["Trump", 44],
+                ["Hillary", 31],
+                ["Obama", 12],
+                ["Bernie", 10],
+                ]);
+
+                var options = {
+                width: 800,
+                legend: { position: 'none' },
+                chart: {
+                    title: 'Number of Tables Cleaned (Monthly)',
+                    subtitle: 'Quantity' },
+                axes: {
+                    x: {
+                    0: { side: 'bottom', label: 'Employees'} // Top x-axis.
+                    }
+                },
+                bar: { groupWidth: "90%" }
+                };
+
+                var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+                // Convert the Classic options to Material options.
+                chart.draw(data, google.charts.Bar.convertOptions(options));
+            };
+
+        </script>
+
+
+
+
 </head>
 
 <body>
@@ -165,7 +252,7 @@
                     <div class="col-sm-6 clearfix">
                         <div class="user-profile pull-right">
                             <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
-                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Kumkum Rai <i class="fa fa-angle-down"></i></h4>
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Faye Eel <i class="fa fa-angle-down"></i></h4>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Message</a>
                                 <a class="dropdown-item" href="#">Settings</a>
@@ -178,22 +265,20 @@
             <!-- page title area end -->
             <div class="main-content-inner">
                 <!-- MAIN CONTENT GOES HERE -->
+                <div class="row">
+                    <div class="col-lg-6 mt-5">
+                        <div id="donutchart" style="width: 800px; height: 500px;"></div>
+                    </div>
+                    <div class="col-lg-6 mt-5">
+                        <div id="top_x_div" style="width: 800px; height: 500px;"></div>
+                    </div>
+                </div>
+
+                
 
                 <div class="row">
-                    <!-- Pie Chart -->
                     <div class="col-lg-6 mt-5">
-                        <div class="card">
-                            <div id="highpiechart4" data-highcharts-chart="0" style="overflow: hidden;"><div id="highcharts-9bja5ux-0" dir="ltr" class="highcharts-container " style="position: relative; overflow: hidden; width: 452px; height: 400px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none;"><svg version="1.1" class="highcharts-root" style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="452" height="400" viewBox="0 0 452 400"><desc>Created with Highcharts 8.2.2</desc><defs><clipPath id="highcharts-9bja5ux-4-"><rect x="0" y="0" width="432" height="332" fill="none"></rect></clipPath></defs><rect fill="#ffffff" class="highcharts-background" x="0" y="0" width="452" height="400" rx="0" ry="0"></rect><rect fill="none" class="highcharts-plot-background" x="10" y="53" width="432" height="332"></rect><rect fill="none" class="highcharts-plot-border" data-z-index="1" x="10" y="53" width="432" height="332"></rect><g class="highcharts-series-group" data-z-index="3"><g class="highcharts-series highcharts-series-0 highcharts-pie-series highcharts-tracker" data-z-index="0.1" opacity="1" transform="translate(10,53) scale(1 1)" style="cursor:pointer;"><path fill="rgb(15,72,127)" d="M 215.96822698022356 10.000003235656408 A 156 156 0 1 1 61.22871776719185 185.54098759050942 L 62.220841371248326 185.4157248495446 A 155 155 0 1 0 215.96843065342725 11.000003214915012 Z" class="highcharts-halo highcharts-color-0" data-z-index="-1" fill-opacity="0.25" visibility="hidden"></path><path fill="rgb(15,72,127)" d="M 215.96822698022356 10.000003235656408 A 156 156 0 1 1 61.22871776719185 185.54098759050942 L 216 166 A 0 0 0 1 0 216 166 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-0"></path><path fill="rgb(52,109,164)" d="M 61.20925416849283 185.38620656357884 A 156 156 0 0 1 102.86190867044395 58.59528739247503 L 216 166 A 0 0 0 0 0 216 166 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-1"></path><path fill="rgb(88,145,200)" d="M 102.96936993419163 58.48220302235366 A 156 156 0 0 1 215.78331912966084 10.000150482763502 L 216 166 A 0 0 0 0 0 216 166 Z" transform="translate(0,0)" stroke="#ffffff" stroke-width="1" opacity="1" stroke-linejoin="round" class="highcharts-point highcharts-color-2"></path></g><g class="highcharts-markers highcharts-series-0 highcharts-pie-series" data-z-index="0.1" opacity="1" transform="translate(10,53) scale(1 1)"></g></g><text x="226" text-anchor="middle" class="highcharts-title" data-z-index="4" style="color:#333333;font-size:18px;fill:#333333;" y="24"><tspan>Dollar market Values, 2018</tspan></text><text x="226" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" style="color:#666666;fill:#666666;" y="52"></text><text x="10" text-anchor="start" class="highcharts-caption" data-z-index="4" style="color:#666666;fill:#666666;" y="397"></text><g class="highcharts-data-labels highcharts-series-0 highcharts-pie-series highcharts-tracker" data-z-index="6" opacity="1" transform="translate(10,53) scale(1 1)" style="cursor:pointer;"><g class="highcharts-label highcharts-data-label highcharts-data-label-color-0" data-z-index="1" transform="translate(272,226)" opacity="1"><text x="5" data-z-index="1" y="16" style="color:#FFFFFF;cursor:pointer;font-size:11px;font-weight:bold;fill:#FFFFFF;"><tspan style="font-weight:bold">USD</tspan><tspan x="5" dy="14">73.0 %</tspan></text></g><g class="highcharts-label highcharts-data-label highcharts-data-label-color-1" data-z-index="1" transform="translate(91,123)" opacity="1"><text x="5" data-z-index="1" y="16" style="color:#FFFFFF;cursor:pointer;font-size:11px;font-weight:bold;fill:#FFFFFF;"><tspan style="font-weight:bold">BTC</tspan><tspan x="5" dy="14">14.1 %</tspan></text></g><g class="highcharts-label highcharts-data-label highcharts-data-label-color-2" data-z-index="1" transform="translate(150,59)" opacity="1"><text x="5" data-z-index="1" y="16" style="color:#FFFFFF;cursor:pointer;font-size:11px;font-weight:bold;fill:#FFFFFF;"><tspan style="font-weight:bold">TCN</tspan><tspan x="5" dy="14">12.9 %</tspan></text></g></g><g class="highcharts-legend" data-z-index="7"><rect fill="none" class="highcharts-legend-box" rx="0" ry="0" x="0" y="0" width="8" height="8" visibility="hidden"></rect><g data-z-index="1"><g></g></g></g><text x="442" class="highcharts-credits" text-anchor="end" data-z-index="8" style="cursor:pointer;color:#999999;font-size:9px;fill:#999999;" y="395">Highcharts.com</text><g class="highcharts-label highcharts-tooltip highcharts-color-0" style="white-space:nowrap;pointer-events:none;" data-z-index="8" transform="translate(303,-9999)" opacity="0" visibility="hidden"><path fill="none" class="highcharts-label-box highcharts-tooltip-box highcharts-shadow" d="M 3.5 0.5 L 90.5 0.5 C 93.5 0.5 93.5 0.5 93.5 3.5 L 93.5 44.5 C 93.5 47.5 93.5 47.5 90.5 47.5 L 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke="#000000" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)"></path><path fill="none" class="highcharts-label-box highcharts-tooltip-box highcharts-shadow" d="M 3.5 0.5 L 90.5 0.5 C 93.5 0.5 93.5 0.5 93.5 3.5 L 93.5 44.5 C 93.5 47.5 93.5 47.5 90.5 47.5 L 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke="#000000" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)"></path><path fill="none" class="highcharts-label-box highcharts-tooltip-box highcharts-shadow" d="M 3.5 0.5 L 90.5 0.5 C 93.5 0.5 93.5 0.5 93.5 3.5 L 93.5 44.5 C 93.5 47.5 93.5 47.5 90.5 47.5 L 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke="#000000" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)"></path><path fill="rgba(247,247,247,0.85)" class="highcharts-label-box highcharts-tooltip-box" d="M 3.5 0.5 L 90.5 0.5 C 93.5 0.5 93.5 0.5 93.5 3.5 L 93.5 44.5 C 93.5 47.5 93.5 47.5 90.5 47.5 L 3.5 47.5 C 0.5 47.5 0.5 47.5 0.5 44.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" stroke="rgb(15,72,127)" stroke-width="1"></path><text x="8" data-z-index="1" y="20" style="color:#333333;cursor:default;font-size:12px;fill:#333333;"><tspan style="font-size: 10px">USD</tspan><tspan x="8" dy="15">Share: </tspan><tspan style="font-weight:bold" dx="0">73.0%</tspan></text></g></svg></div></div>
-                        </div>
-                    </div>
-                    
-                    <!-- Bar Chart -->
-                    <div class="col-lg-6 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <div id="ambarchart4" style="overflow: hidden; text-align: left;"><div class="amcharts-main-div" style="position: relative;"><div class="amcharts-chart-div" style="overflow: hidden; position: relative; text-align: left; width: 421px; height: 400px; padding: 0px; touch-action: none; cursor: default;"><svg version="1.1" style="position: absolute; width: 421px; height: 400px; top: -0.21875px; left: -0.40625px;"><desc>JavaScript chart by amCharts 3.21.15</desc><g><path cs="100,100" d="M0.5,0.5 L420.5,0.5 L420.5,399.5 L0.5,399.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path><path cs="100,100" d="M0.5,0.5 L291.5,0.5 L291.5,308.5 L0.5,308.5 L0.5,0.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0" transform="translate(59,20)"></path></g><g><g transform="translate(59,20)"><g><path cs="100,100" d="M12.5,0.5 L12.5,5.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,308)"></path><path cs="100,100" d="M0.5,308.5 L0.5,308.5 L0.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M85.5,0.5 L85.5,5.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,308)"></path><path cs="100,100" d="M73.5,308.5 L73.5,308.5 L73.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M158.5,0.5 L158.5,5.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,308)"></path><path cs="100,100" d="M146.5,308.5 L146.5,308.5 L146.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M230.5,0.5 L230.5,5.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(0,308)"></path><path cs="100,100" d="M218.5,308.5 L218.5,308.5 L218.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M291.5,308.5 L291.5,308.5 L291.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g></g><g transform="translate(59,20)" visibility="visible"><g><path cs="100,100" d="M0.5,308.5 L0.5,308.5 L291.5,308.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,264.5 L0.5,264.5 L291.5,264.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,220.5 L0.5,220.5 L291.5,220.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,176.5 L0.5,176.5 L291.5,176.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,132.5 L0.5,132.5 L291.5,132.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,88.5 L0.5,88.5 L291.5,88.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,44.5 L0.5,44.5 L291.5,44.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g><g><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L291.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.1" stroke="#000000"></path></g></g></g><g transform="translate(59,20)" clip-path="url(#AmChartsEl-32)"><g visibility="hidden"></g></g><g></g><g></g><g></g><g><g transform="translate(59,20)"><g><g transform="translate(2,308)" aria-label=" USA 3,025"><path cs="100,100" d="M0.5,0.5 L0.5,-265.5 L19.5,-265.5 L19.5,0.5 L0.5,0.5 Z" fill="#8918FE" stroke="#67b7dc" fill-opacity="0.9" stroke-width="1" stroke-opacity="0.2"></path></g><g transform="translate(26,308)" aria-label=" China 1,882"><path cs="100,100" d="M0.5,0.5 L0.5,-165.5 L19.5,-165.5 L19.5,0.5 L0.5,0.5 Z" fill="#7474F0" stroke="#67b7dc" fill-opacity="0.9" stroke-width="1" stroke-opacity="0.2"></path></g><g transform="translate(51,308)" aria-label=" Japan 1,809"><path cs="100,100" d="M0.5,0.5 L0.5,-158.5 L19.5,-158.5 L19.5,0.5 L0.5,0.5 Z" fill="#C5C5FD" stroke="#67b7dc" fill-opacity="0.9" stroke-width="1" stroke-opacity="0.2"></path></g><g transform="translate(75,308)" aria-label=" Germany 1,322"><path cs="100,100" d="M0.5,0.5 L0.5,-115.5 L19.5,-115.5 L19.5,0.5 L0.5,0.5 Z" fill="#952FFE" stroke="#67b7dc" fill-opacity="0.9" stroke-width="1" stroke-opacity="0.2"></path></g><g transform="translate(99,308)" aria-label=" UK 1,122"><path cs="100,100" d="M0.5,0.5 L0.5,-98.5 L19.5,-98.5 L19.5,0.5 L0.5,0.5 Z" fill="#7474F0" stroke="#67b7dc" fill-opacity="0.9" stroke-width="1" stroke-opacity="0.2"></path></g><g transform="translate(123,308)" aria-label=" France 1,114"><path cs="100,100" d="M0.5,0.5 L0.5,-97.5 L19.5,-97.5 L19.5,0.5 L0.5,0.5 Z" fill="#CBCBFD" stroke="#67b7dc" fill-opacity="0.9" stroke-width="1" stroke-opacity="0.2"></path></g><g transform="translate(148,308)" aria-label=" India 984"><path cs="100,100" d="M0.5,0.5 L0.5,-86.5 L19.5,-86.5 L19.5,0.5 L0.5,0.5 Z" fill="#FD9C21" stroke="#67b7dc" fill-opacity="0.9" stroke-width="1" stroke-opacity="0.2"></path></g><g transform="translate(172,308)" aria-label=" Spain 711"><path cs="100,100" d="M0.5,0.5 L0.5,-62.5 L19.5,-62.5 L19.5,0.5 L0.5,0.5 Z" fill="#0D8ECF" stroke="#67b7dc" fill-opacity="0.9" stroke-width="1" stroke-opacity="0.2"></path></g><g transform="translate(196,308)" aria-label=" Netherlands 665"><path cs="100,100" d="M0.5,0.5 L0.5,-58.5 L19.5,-58.5 L19.5,0.5 L0.5,0.5 Z" fill="#0D52D1" stroke="#67b7dc" fill-opacity="0.9" stroke-width="1" stroke-opacity="0.2"></path></g><g transform="translate(220,308)" aria-label=" Russia 580"><path cs="100,100" d="M0.5,0.5 L0.5,-50.5 L19.5,-50.5 L19.5,0.5 L0.5,0.5 Z" fill="#2A0CD0" stroke="#67b7dc" fill-opacity="0.9" stroke-width="1" stroke-opacity="0.2"></path></g><g transform="translate(245,308)" aria-label=" South Korea 443"><path cs="100,100" d="M0.5,0.5 L0.5,-38.5 L19.5,-38.5 L19.5,0.5 L0.5,0.5 Z" fill="#8A0CCF" stroke="#67b7dc" fill-opacity="0.9" stroke-width="1" stroke-opacity="0.2"></path></g><g transform="translate(269,308)" aria-label=" Canada 441"><path cs="100,100" d="M0.5,0.5 L0.5,-38.5 L19.5,-38.5 L19.5,0.5 L0.5,0.5 Z" fill="#9F43FE" stroke="#67b7dc" fill-opacity="0.9" stroke-width="1" stroke-opacity="0.2"></path></g></g></g></g><g></g><g><path cs="100,100" d="M0.5,308.5 L291.5,308.5 L291.5,308.5" fill="none" stroke-width="1" stroke-opacity="0.2" stroke="#000000" transform="translate(59,20)"></path><g><path cs="100,100" d="M0.5,0.5 L291.5,0.5" fill="none" stroke-width="1" stroke-opacity="0.3" stroke="#000000" transform="translate(59,328)"></path></g><g><path cs="100,100" d="M0.5,0.5 L0.5,308.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" transform="translate(59,20)" visibility="visible"></path></g></g><g><g transform="translate(59,20)" clip-path="url(#AmChartsEl-33)" style="pointer-events: none;"><path cs="100,100" d="M0.5,0.5 L0.5,0.5 L0.5,308.5" fill="none" stroke-width="1" stroke-opacity="0" stroke="#000000" visibility="hidden" transform="translate(279,0)"></path><path cs="100,100" d="M0.5,0.5 L291.5,0.5 L291.5,0.5" fill="none" stroke-width="1" stroke="#000000" visibility="hidden" transform="translate(0,301)"></path></g><clipPath id="AmChartsEl-33"><rect x="0" y="0" width="291" height="308" rx="0" ry="0" stroke-width="0"></rect></clipPath></g><g></g><g><g transform="translate(59,20)"></g></g><g><g></g></g><g><g transform="translate(59,20)" visibility="visible"><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(3.822019592786086,324.3029804072139) rotate(-45)"><tspan y="6" x="0">USA</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(67.1103498949271,334.0146501050729) rotate(-45)"><tspan y="6" x="0">Germany</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(148.19235943302021,325.9326405669798) rotate(-45)"><tspan y="6" x="0">India</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="middle" transform="translate(217.54070900357067,328.58429099642933) rotate(-45)"><tspan y="6" x="0">Russia</tspan></text></g><g transform="translate(59,20)" visibility="visible"><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,307)"><tspan y="6" x="0">0</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,263)"><tspan y="6" x="0">500</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,219)"><tspan y="6" x="0">1,000</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,175)"><tspan y="6" x="0">1,500</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,131)"><tspan y="6" x="0">2,000</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,87)"><tspan y="6" x="0">2,500</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,43)"><tspan y="6" x="0">3,000</tspan></text><text y="6" fill="#000000" font-family="Verdana" font-size="11px" opacity="1" text-anchor="end" transform="translate(-12,-1)"><tspan y="6" x="0">3,500</tspan></text></g></g><g></g><g transform="translate(59,20)"></g><g></g><g></g><clipPath id="AmChartsEl-32"><rect x="-1" y="-1" width="293" height="310" rx="0" ry="0" stroke-width="0"></rect></clipPath></svg><a href="http://www.amcharts.com" title="JavaScript charts" style="position: absolute; text-decoration: none; color: rgb(0, 0, 0); font-family: Verdana; font-size: 11px; opacity: 0.7; display: block; left: 64px; top: 25px;">JS chart by amCharts</a></div></div></div>
-                            </div>
-                        </div>
+                        <div id="curve_chart" style="width: 1500px; height: 500px;"></div>
                     </div>
                 </div>
 
