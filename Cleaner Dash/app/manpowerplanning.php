@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard</title>
+    <title>Manpower Planning</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -31,93 +31,6 @@
             width: 100px;
         } */
     </style>
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-            google.charts.load("current", {packages:["corechart","bar"]});
-            google.charts.setOnLoadCallback(drawChart);
-            google.charts.setOnLoadCallback(drawChart2);
-            google.charts.setOnLoadCallback(drawChart3);
-
-
-            function drawChart() {
-                var data = google.visualization.arrayToDataTable([
-                ['Zone', 'Number of Tables'],
-                ['1',     12],
-                ['2',      16],
-                ['3',  9],
-                ['4', 14],
-                ['5',    6]
-                ]);
-
-                var options = {
-                title: 'No. of Tables per Zone',
-                pieHole: 0.5,
-                };
-
-                var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-                chart.draw(data, options);
-            }
-
-            function drawChart2() {
-                var data = google.visualization.arrayToDataTable([
-                ['Month', 'Joe', 'Trump', 'Hillary', 'Obama', 'Bernie'],
-                ['Jan',  5, 5,  3, 8,  6],
-                ['Feb',  6, 3,  2, 7,  5],
-                ['Mar',  4, 7,  5, 4,  4],
-                ['Apr',  5, 6,  4, 7,  2],
-                ['May',  4, 7,  5, 4,  4],
-                ['June',  5, 6,  6, 3,  3],
-                ['July',  3, 5,  7, 4,  2],
-                ['Aug',  3, 6,  6, 5,  2],
-                ['Sep',  2, 5,  6, 4,  2],
-                ['Oct',  3, 6,  6, 5,  3]
-                ]);
-
-                var options = {
-                title: 'Average Cleaning Time (Month)',
-                curveType: 'function',
-                legend: { position: 'bottom' }
-                };
-
-                var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-                chart.draw(data, options);
-            }
-
-            function drawChart3() {
-                var data = new google.visualization.arrayToDataTable([
-                ['Joe', 'Quantity'],
-                ["Trump", 44],
-                ["Hillary", 31],
-                ["Obama", 12],
-                ["Bernie", 10],
-                ]);
-
-                var options = {
-                width: 800,
-                legend: { position: 'none' },
-                chart: {
-                    title: 'Number of Tables Cleaned (Monthly)',
-                    subtitle: 'Quantity' },
-                axes: {
-                    x: {
-                    0: { side: 'bottom', label: 'Employees'} // Top x-axis.
-                    }
-                },
-                bar: { groupWidth: "90%" }
-                };
-
-                var chart = new google.charts.Bar(document.getElementById('top_x_div'));
-                // Convert the Classic options to Material options.
-                chart.draw(data, google.charts.Bar.convertOptions(options));
-            };
-
-        </script>
-
-
-
-
 </head>
 
 <body>
@@ -145,9 +58,9 @@
                             <li class="active">
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Dashboard</span></a>
                                 <ul class="collapse">
-                                    <li class="active"><a href="#">Analytics Dashboard</a></li>
+                                    <li><a href="analyticsdashboard.php">Analytics Dashboard</a></li>
                                     <li><a href="floorlayout.php">Floor Layout Plan</a></li>
-                                    <li><a href="manpowerplanning.php">Manpower Planning</a></li>
+                                    <li class="active"><a href="#">Manpower Planning</a></li>
                                     </ul>
                             </li>
                         </ul>
@@ -242,10 +155,10 @@
                 <div class="row align-items-center">
                     <div class="col-sm-6">
                         <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Analytics Dashboard</h4>
+                            <h4 class="page-title pull-left">Manpower Planning</h4>
                             <ul class="breadcrumbs pull-left">
                                 <li><a href="index.html">Home</a></li>
-                                <li><span>Analytics Dashboard</span></li>
+                                <li><span>Manpower Planning</span></li>
                             </ul>
                         </div>
                     </div>
@@ -265,22 +178,162 @@
             <!-- page title area end -->
             <div class="main-content-inner">
                 <!-- MAIN CONTENT GOES HERE -->
-                <div class="row">
-                    <div class="col-lg-6 mt-5">
-                        <div id="donutchart" style="width: 800px; height: 500px;"></div>
-                    </div>
-                    <div class="col-lg-6 mt-5">
-                        <div id="top_x_div" style="width: 800px; height: 500px;"></div>
-                    </div>
-                </div>
+
+
 
                 
-
+                
+                <!-- button srea start -->
                 <div class="row">
-                    <div class="col-lg-6 mt-5">
-                        <div id="curve_chart" style="width: 1500px; height: 500px;"></div>
+                    <!-- General button -->
+                    <div class=" mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <table>
+                                    <tr><h4 class="header-title">Manpower per Zone</h4></tr>
+                                    <tr>
+                                        <td>
+                                            Zone:
+                                        </td>
+                                        <td>
+                                            <div class="dropdown col-lg-6 col-md-4 col-sm-6">
+                                                <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">
+                                                    1
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#">1</a>
+                                                    <a class="dropdown-item" href="#">2</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <br>
+                                        
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                Employees:
+                                                </td>
+
+                                                <td>
+                                                <!-- <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" checked class="custom-control-input" id="customCheck1">
+                                                <label class="custom-control-label" for="customCheck1">checked Checkbox</label>
+                                            </div> -->
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" checked class="custom-control-input" id="kaixian">
+                                                    <label class="custom-control-label" for="kaixian">Kai Xian</label>
+                                                </div>
+
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" checked class="custom-control-input" id="josh">
+                                                    <label class="custom-control-label" for="josh">Josh</label>
+                                                </div>
+
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="clement">
+                                                    <label class="custom-control-label" for="clement">Clement</label>
+                                                </div>
+
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="hengyu">
+                                                    <label class="custom-control-label" for="hengyu">Heng Yu</label>
+                                                </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <button type="button" class="btn btn-outline-primary mb-3">Save</button>
+                                    </tr>  
+                                </table>
+
+                                <!-- <script>
+                                    document.getElementById("button").style.background='red';
+                                </script> -->
+                                
+
+                                
+
+                            </div>
+                        </div>
                     </div>
-                </div>
+
+                </div>   
+                <div class="row">
+                    <!-- General button -->
+                    <div class=" mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <table>
+                                    <tr><h4 class="header-title">Zone 1</h4></tr>
+                                    <tr>
+                                        <td >
+                                            <button type="button" class="btn btn-primary mb-3" id = button style="background-color:green;color:white;">Table 1</button>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 2</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 3</button>
+                                            <br>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 4</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 5</button>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 6</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 7</button>
+                                            <br>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 8</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 9</button>
+                                        </td>
+                                      </tr>  
+                                </table>
+
+                                <!-- <script>
+                                    document.getElementById("button").style.background='red';
+                                </script> -->
+                                
+
+                                
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- General button -->
+                    <div class=" col-lg-6 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <table>
+                                    <tr><h4 class="header-title">Zone 2</h4></tr>
+                                    <tr>
+                                        <td >
+                                            <button type="button" class="btn btn-primary mb-3" id = button style="background-color:green;color:white;">Table 1</button>
+                                            <br>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 2</button>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 3</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 4</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 5</button>
+                                            <br>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 6</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 7</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 8</button>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 9</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 10</button>
+                                            
+                                        </td>
+                                      </tr>  
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+
 
 
 
@@ -294,7 +347,7 @@
         <!-- footer area start-->
         <footer>
             <div class="footer-area">
-                <p>© Copyright 2018. All right reserved. Template by <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
+                
             </div>
         </footer>
         <!-- footer area end-->
