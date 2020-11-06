@@ -32,7 +32,15 @@ import requests
 res = requests.post('http://localhost:5000/api/add_message/1234', json={"mytext":"lalala"})  --> The address change to ngrok address
 if res.ok:
     print res.json()
+------------------------------------------------------------------------------
+Flow of tasks to complete:
+get flask working with MongoDB Atlas --> client = MongoClient("mongodb+srv://james:root@cluster0.how3s.mongodb.net/CleanerDash?retryWrites=true&w=majority" (from mongodbtest.py)
+convert local IP to open IP with ngrok
+call api.py with Main.py on RPi
 """
+# DB URL for MongoDB
+
+
 
 #GET
 @app.route("/tablestatus/<string:table>")
@@ -53,11 +61,18 @@ def update_cleaning():
     # process content here (Sort the json out to send to Mongo etc)
 
     # INSERT CLEANING STATUS
-    # try:
-    #     db.session.add(user)
-    #     db.session.commit()
-    # except:
-    #     return jsonify({"message": "An error occurred creating the user."}), 500
+    try:
+        db.CleaningRecords.insert({
+        "time_cleaned" : datetime.datetime.now(),
+        "eid" : 1,
+        "name" : "Kare En",
+        "table_id" : 1,
+        "time_sat" : 132,
+        "sitting_duration" : 1232,
+        "cleaning_delay" : 313
+        })
+    except:
+        return jsonify({"message": "An error occurred when inserting cleaning record."}), 500
     return jsonify(user.json()), 201
 
 
