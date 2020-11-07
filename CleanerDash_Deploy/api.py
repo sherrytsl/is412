@@ -8,6 +8,8 @@ from bson import json_util
 import os
 
 app = Flask(__name__)
+app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app, support_credentials=True)
 
 # db = 123 # SQLAlchemy(app)
 # http://CleanerDash_Deploy-nice-marmot-lf.cfapps.us10.hana.ondemand.com
@@ -42,6 +44,7 @@ talk to kaixian to link w ui (we need to make functions for him to access DB)
 
 #GET Kai Xian use this to RETRIEVE table status
 @app.route("/tablestatus")
+@cross_origin(supports_credentials=True)
 def get_table_status():
     # RETRIEVE STATUS OF ALL TABLES
     documents = [doc for doc in db.TableStatus.find({})]
@@ -52,6 +55,7 @@ def get_table_status():
 
 #POST Main.py will send table status here
 @app.route("/tablestatus/update/", methods=['POST'])
+@cross_origin(supports_credentials=True)
 def update_table_status():
     # Update STATUS OF A TABLES
     # print(request.args)
@@ -71,6 +75,7 @@ def update_table_status():
 #POST Main.py will send timing data here (sit/leave/clean)
 # NEED TO CHANGE ALL STATIC VARIABLES TO VARIABLES FROM IOT MAIN.PY 
 @app.route("/cleaning/", methods=['POST'])
+@cross_origin(supports_credentials=True)
 def update_cleaning():
     content = request.json # JSON of cleaning data is sent through request and we take the json out and assign to content
     # process content here (Sort the json out to send to Mongo etc)
