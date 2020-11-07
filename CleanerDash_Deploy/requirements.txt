@@ -1,0 +1,9 @@
+requests
+json
+datetime
+flask
+flask_cors
+datetime
+pymongo
+pprint
+bson
