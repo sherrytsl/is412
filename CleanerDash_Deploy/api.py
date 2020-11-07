@@ -10,7 +10,9 @@ import os
 app = Flask(__name__)
 
 # db = 123 # SQLAlchemy(app)
-client = MongoClient("mongodb+srv://james:root@cluster0.how3s.mongodb.net/CleanerDash?retryWrites=true&w=majority")
+# http://CleanerDash_Deploy-nice-marmot-lf.cfapps.us10.hana.ondemand.com
+# client = MongoClient("mongodb+srv://james:root@cluster0.how3s.mongodb.net/CleanerDash?retryWrites=true&w=majority")
+client = MongoClient("mongodb://b9UJXPNOtvai7SqE:fHTf8qKlYq3eprUF@10.11.241.2:60666/g2xtvEJCyZxcZ09V")
 db = client.CleanerDash
 cf_port = int(os.getenv("PORT", 5000))
 
