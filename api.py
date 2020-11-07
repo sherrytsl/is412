@@ -14,11 +14,14 @@ db = client.CleanerDash
 
 """
 List of Functions for API
-    @app.route("/tablestatus/all")
-    - def get_table_status()       ----> Retrieves the table status of "r", "y" or "g" for all tables
+    @app.route("/tablestatus")
+    - def get_table_status()        ----> Retrieves the table status of "r", "y" or "g" for all tables
+
+    @app.route("/tablestatus/update/", methods=['POST'])
+    def update_table_status()       ----> Receives table status and updates mongodb
 
     @app.route("/cleaning/", methods=['POST'])
-    - def update_cleaning()             ----> Inserts the cleanng data sent from RPi
+    - def update_cleaning()         ----> Inserts the cleanng data sent from RPi
 
 Port Number
     - 5000
