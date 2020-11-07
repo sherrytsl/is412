@@ -1,4 +1,9 @@
+---
 applications:
-    - memory: 256MB
-      disk_quota: 512MB
-      random-route: true
+- name: CleanerDash_Deploy
+  memory: 1G
+  disk_quota: 1G
+  random-route: true
+  buildpacks:
+  - python_buildpack
+  instances: 1
