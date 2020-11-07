@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 # db = 123 # SQLAlchemy(app)
 client = MongoClient("mongodb+srv://james:root@cluster0.how3s.mongodb.net/CleanerDash?retryWrites=true&w=majority")
+
 db = client.CleanerDash
 
 """
@@ -66,8 +67,17 @@ def get_table_status():
 @app.route("/tablestatus/update/", methods=['POST'])
 def update_table_status():
     # Update STATUS OF A TABLES
+    print(request.args)
+    for key, value in request.args:
+        print(key)
+        print("AAAAAAAAAAAAAA")
+        print(value)
     content = request.json
     # db.TableStatus.update_one({"table_id" : 1}, {"$set": {"table_status" : "g"}})
+    print("-------------------")
+    print(content)
+    print(type(content))
+    print("-------------------")
     db.TableStatus.update_one({"table_id" : content["table_id"]}, {"$set": {"table_status" : content["table_status"]}})
     documents = [doc for doc in db.TableStatus.find({})]
     pprint(documents)
@@ -87,7 +97,7 @@ def update_cleaning():
 
     # INSERT CLEANING STATUS
     try:
-        db.CleaningRecords.insert(content)
+        db.CleaningRecords.insert_one(content)
     except:
         return jsonify({"message": "An error occurred when inserting cleaning record."}), 500
 
