@@ -9,11 +9,10 @@ import os
 
 app = Flask(__name__)
 
-mongodb = env.get_service(label='mongodb')
 # db = 123 # SQLAlchemy(app)
 client = MongoClient("mongodb+srv://james:root@cluster0.how3s.mongodb.net/CleanerDash?retryWrites=true&w=majority")
 db = client.CleanerDash
-cf_port = os.getenv("PORT")
+cf_port = int(os.getenv("PORT", 5000))
 
 """
 List of Functions for API
