@@ -180,6 +180,56 @@
                 <!-- MAIN CONTENT GOES HERE -->
 
 
+                <!-- <script>
+                    //fetch a service
+                    async() =>{
+                        var serviceURL = "https://reqbin.com/echo/get/json";
+
+                        try{
+                            const response = await fetch(
+                                serviceURL, {method: "GET"}
+                            );
+
+                            console.log(response.json());
+
+                            if (!response.ok){
+                                $("#display").text("Error in retreiving student data");
+                            }else{
+                                const students = await response.json();
+                                console.log(students);
+                            }
+
+                        }catch (error){
+                            $("#display").text("Error in calling service, " + error);
+                        }
+
+                    };
+                
+                </script> -->
+
+                <button type="button" class="btn btn-primary mb-3" id =t1 style="background-color:red;color:white;">Table 1</button>
+
+                <script>
+                   
+                    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+                    const url = "https://reqbin.com/echo/get/json"; 
+                    
+                    async function getStatus(){
+                        const response = await fetch(proxyurl + url);
+                        const resJson = await response.json();
+                        console.log(resJson.success)
+
+                        if(resJson.success == "true"){
+                            document.getElementById("t1").style.background='yellow';
+                        }
+                    }
+
+                    getStatus()
+
+                </script>
+
+
+
 
 
                 
