@@ -211,16 +211,24 @@
 
                 <script>
                    
-                    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-                    const url = "https://reqbin.com/echo/get/json"; 
+                    // const proxyurl = "https://cors-anywhere.herokuapp.com/";
+                    const url = "http://cleanerdash_deploy-nice-marmot-lf.cfapps.us10.hana.ondemand.com/tablestatus"; 
                     
                     async function getStatus(){
-                        const response = await fetch(proxyurl + url);
+                        const response = await fetch(url);
                         const resJson = await response.json();
-                        console.log(resJson.success)
+                        var resArray = JSON.stringify(resJson)
+                        // console.log(typeof JSON.stringify(resJson));
 
-                        if(resJson.success == "true"){
+                        console.log(typeof resJson["Table History"][0]['table_status'])
+
+                        // for (i=0;i<length(reJson);i++){
+                        //     for 
+                        // }
+
+                        if(resJson["Table History"][0]['table_status'] == "g"){
                             document.getElementById("t1").style.background='yellow';
+                            document.getElementById("t1").style.color='black';
                         }
                     }
 
