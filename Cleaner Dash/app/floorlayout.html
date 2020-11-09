@@ -26,10 +26,11 @@
         th, td {
             padding: 10px;
         }
-        /* button{
+        button{
             height: 75px;
             width: 100px;
-        } */
+        }
+
     </style>
 </head>
 
@@ -48,7 +49,7 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="#"><img src="assets/images/icon/logo.png" alt="logo"></a>
+                    <a href="#"><img src="assets/images/icon/diner.png" alt="logo"></a>
                 </div>
             </div>
             <div class="main-menu">
@@ -58,9 +59,9 @@
                             <li class="active">
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Dashboard</span></a>
                                 <ul class="collapse">
-                                    <li><a href="analyticsdashboard.php">Analytics Dashboard</a></li>
+                                    <li><a href="analyticsdashboard.html">Analytics Dashboard</a></li>
                                     <li class="active"><a href="#">Floor Layout Plan</a></li>
-                                    <li><a href="manpowerplanning.php">Manpower Planning</a></li>
+                                    <li><a href="manpowerplanning.html">Manpower Planning</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -180,35 +181,6 @@
                 <!-- MAIN CONTENT GOES HERE -->
 
 
-                <!-- <script>
-                    //fetch a service
-                    async() =>{
-                        var serviceURL = "https://reqbin.com/echo/get/json";
-
-                        try{
-                            const response = await fetch(
-                                serviceURL, {method: "GET"}
-                            );
-
-                            console.log(response.json());
-
-                            if (!response.ok){
-                                $("#display").text("Error in retreiving student data");
-                            }else{
-                                const students = await response.json();
-                                console.log(students);
-                            }
-
-                        }catch (error){
-                            $("#display").text("Error in calling service, " + error);
-                        }
-
-                    };
-                
-                </script> -->
-
-                <button type="button" class="btn btn-primary mb-3" id =t1 style="background-color:red;color:white;">Table 1</button>
-
                 <script>
                    
                     // const proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -227,8 +199,9 @@
                         // }
 
                         if(resJson["Table History"][0]['table_status'] == "g"){
-                            document.getElementById("t1").style.background='yellow';
-                            document.getElementById("t1").style.color='black';
+                            // document.getElementById("t1").style.background='red';
+                            // document.getElementById("t1").style.background='yellow';
+                            // document.getElementById("t1").style.color='black';
                         }
                     }
 
@@ -236,11 +209,7 @@
 
                 </script>
 
-
-
-
-
-                
+               
                 
                 <!-- button srea start -->
                 <div class="row">
@@ -248,6 +217,10 @@
                     <div class=" mt-5">
                         <div class="card">
                             <div class="card-body">
+                                
+
+                
+
                                 <table>
                                     <tr><h4 class="header-title">Zone 1</h4></tr>
                                     <tr>
@@ -292,24 +265,24 @@
                                     <tr><h4 class="header-title">Zone 2</h4></tr>
                                     <tr>
                                         <td >
-                                            <button type="button" class="btn btn-primary mb-3" id = button style="background-color:green;color:white;">Table 1</button>
+                                            <button type="button" class="btn btn-primary mb-3" id =t1 style="background-color:green;color:white;">Table 10</button>
                                             <br>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 2</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 11</button>
                                         </td>
                                         <td></td>
                                         <td>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 3</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 4</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 5</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 12</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 13</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 14</button>
                                             <br>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 6</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 7</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 8</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 15</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 16</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 17</button>
                                         </td>
                                         <td></td>
                                         <td>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 9</button>
-                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 10</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 18</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 19</button>
                                             
                                         </td>
                                       </tr>  
@@ -318,6 +291,45 @@
                         </div>
                     </div>
                 </div>   
+
+
+                <div class="row">
+                    <!-- General button -->
+                    <div class=" mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <table>
+                                    <tr><h4 class="header-title">Zone 3</h4></tr>
+                                    <tr>
+                                        <td >
+                                            <button type="button" class="btn btn-primary mb-3" id = button style="background-color:green;color:white;">Table 20</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 21</button>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 22</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 23</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 24</button>
+                                            <br>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 25</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 26</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 27</button>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 28</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 29</button>
+                                            <br>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 30</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 31</button>
+                                        </td>
+                                      </tr>  
+                                </table>
+                            </div> 
+                        </div> 
+                    </div>
+
+                </div> 
 
 
 
