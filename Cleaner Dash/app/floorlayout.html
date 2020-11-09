@@ -183,11 +183,11 @@
 
                 <script>
                    
-                    // const proxyurl = "https://cors-anywhere.herokuapp.com/";
+                    const proxyurl = "https://cors-anywhere.herokuapp.com/";
                     const url = "http://cleanerdash_deploy-nice-marmot-lf.cfapps.us10.hana.ondemand.com/tablestatus"; 
                     
                     async function getStatus(){
-                        const response = await fetch(url);
+                        const response = await fetch(proxyurl + url);
                         const resJson = await response.json();
                         var resArray = JSON.stringify(resJson)
                         // console.log(typeof JSON.stringify(resJson));
@@ -198,10 +198,12 @@
                         //     for 
                         // }
 
-                        if(resJson["Table History"][0]['table_status'] == "g"){
-                            // document.getElementById("t1").style.background='red';
-                            // document.getElementById("t1").style.background='yellow';
-                            // document.getElementById("t1").style.color='black';
+                        if(resJson["Table History"][0]['table_status'] == "y"){
+                            document.getElementById("t1").style.background='yellow';
+                            document.getElementById("t1").style.color='black';
+                        }
+                        else if (resJson["Table History"][0]['table_status'] == "r") {
+                            document.getElementById("t1").style.background='red';
                         }
                     }
 
@@ -225,7 +227,7 @@
                                     <tr><h4 class="header-title">Zone 1</h4></tr>
                                     <tr>
                                         <td >
-                                            <button type="button" class="btn btn-primary mb-3" id = button style="background-color:green;color:white;">Table 1</button>
+                                            <button type="button" class="btn btn-primary mb-3" style="background-color:green;color:white;">Table 1</button>
                                         </td>
                                         <td></td>
                                         <td>
