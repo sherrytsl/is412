@@ -1,3 +1,4 @@
+from json import dump
 import requests, json, datetime
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
@@ -8,8 +9,23 @@ from bson import json_util
 import os
 
 app = Flask(__name__)
-app.config['CORS_HEADERS'] = 'Content-Type'
-CORS(app, support_credentials=True)
+# CORS(app, headers='Content-Type')
+# app.config['CORS_HEADERS'] = 'Content-Type'
+# CORS(app, support_credentials=True)
+
+
+
+# url = "http://cleanerdash_deploy-nice-marmot-lf.cfapps.us10.hana.ondemand.com/tablestatus/update/"
+
+# payload = "{\r\n    \"table_id\" : 1,\r\n    \"table_status\" :  \"y\"\r\n}"
+# headers = {
+#   'Content-Type': 'application/json'
+# }
+
+# response = requests.request("POST", url, headers=headers, data = payload)
+
+# print(response.text.encode('utf8'))
+
 
 # db = 123 # SQLAlchemy(app)
 # http://CleanerDash_Deploy-nice-marmot-lf.cfapps.us10.hana.ondemand.com
@@ -42,7 +58,7 @@ Call api.py(CLOUD deployed) with Main.py on RPi (API end point on cockpit ? conf
 talk to kaixian to link w ui (we need to make functions for him to access DB)
 """
 @app.route("/onetimeinsert")
-@cross_origin(supports_credentials=True)
+# @cross_origin(supports_credentials=True)
 def onetimeinsert():
     # RETRIEVE STATUS OF ALL TABLES
     # db = mongo.db
@@ -70,51 +86,88 @@ def onetimeinsert():
 
 #GET Kai Xian use this to RETRIEVE table status
 @app.route("/tablestatus")
-@cross_origin(supports_credentials=True)
+# @cross_origin(supports_credentials=True)
 def get_table_status():
     # RETRIEVE STATUS OF ALL TABLES
     documents = [doc for doc in mongo.db.TableStatus.find({})]
+    print("JAMEESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS")
     pprint(documents)
+    print("JOSSSHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
     return json_util.dumps({'Table History': documents})
-    # print(type(documents))
-    # return documents
+
 @app.route("/employee")
-@cross_origin(supports_credentials=True)
+# @cross_origin(supports_credentials=True)
 def get_employee():
-    # RETRIEVE STATUS OF ALL TABLES
+    # RETRIEVE ALL EMPLOYEE RECORDS
     documents = [doc for doc in mongo.db.Employee.find({})]
     pprint(documents)
     return json_util.dumps({'Employee': documents})
-    # print(type(documents))
-    # return documents
+
 @app.route("/cleaningrecords")
-@cross_origin(supports_credentials=True)
+# @cross_origin(supports_credentials=True)
 def get_cleaningrecords():
-    # RETRIEVE STATUS OF ALL TABLES
+    # RETRIEVE ALL CLEANING RECORDS
     documents = [doc for doc in mongo.db.CleaningRecords.find({})]
     pprint(documents)
     return json_util.dumps({'Cleaning Record': documents})
-    # print(type(documents))
-    # return documents
-@app.route("/testpls")
-@cross_origin(supports_credentials=True)
-def update_table_status_2_test():
-    content = request.get_json()
-    print("-------------------")
-    print(content)
-    print(type(content))
-    print("-------------------")
-    mongo.db.TableStatus.find_one_and_update({"table_id" : content["table_id"]}, {"$set": {"table_status" : content["table_status"]}},upsert=True)
+
+# WORKAROUND METHODS
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#POST Main.py will send table status here
+@app.route("/tablestatus/update_workaround_green/")
+def update_table_status_workaround_green():
+    mongo.db.TableStatus.find_one_and_update({"table_id" : 1}, {"$set": {"table_status" : 'g'}},upsert=True)
     documents = [doc for doc in mongo.db.TableStatus.find({})]
-    pprint(json_util.dumps({'Table History': documents}))
     return json_util.dumps({'Table History': documents})
-    # return "invoked"
+
+@app.route("/tablestatus/update_workaround_yellow/")
+def update_table_status_workaround_yellow():
+    mongo.db.TableStatus.find_one_and_update({"table_id" : 1}, {"$set": {"table_status" : 'y'}},upsert=True)
+    documents = [doc for doc in mongo.db.TableStatus.find({})]
+    return json_util.dumps({'Table History': documents})
+
+@app.route("/tablestatus/update_workaround_red/")
+def update_table_status_workaround_red():
+    mongo.db.TableStatus.find_one_and_update({"table_id" : 1}, {"$set": {"table_status" : 'r'}},upsert=True)
+    documents = [doc for doc in mongo.db.TableStatus.find({})]
+    return json_util.dumps({'Table History': documents})
+
+#POST Main.py will send timing data here (sit/leave/clean)
+# NEED TO CHANGE ALL STATIC VARIABLES TO VARIABLES FROM IOT MAIN.PY 
+@app.route("/cleaning_workaround/", methods=['GET', 'POST'])
+# @app.route("/cleaning/")
+# @accept(supports_credentials=True)
+# @cross_origin()
+def update_cleaning_workaround():
+    content = request# JSON of cleaning data is sent through request and we take the json out and assign to content
+    # process content here (Sort the json out to send to Mongo etc)
+    # INSERT CLEANING STATUS
+    print("*************************")
+    json.dumps(content)
+    # print(content.decode("utf-8"))
+    # print(content.is_json)
+    # print(content)
+    # pprint(json_util.loads(content))
+    print("-----------------------")
+    try:
+        # pprint(json_util.loads(content))
+        mongo.db.CleaningRecords.insert_one(content)
+    except:
+        return jsonify({"message": "An error occurred when inserting cleaning record."}), 500
+    # print("Current documents in collection after adding Kare En TAN:")
+    # allrows = db.CleaningRecords.find()
+    # for document in allrows:
+    #     print(document)
+    return jsonify("Success!"), 201
+
+# WORKAROUND METHODS
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #POST Main.py will send table status here
 @app.route("/tablestatus/update/", methods=['POST'])
 # @app.route("/tablestatus/update/")
-@cross_origin(supports_credentials=True)
+# @cross_origin(supports_credentials=True)
 def update_table_status():
     # Update STATUS OF A TABLES
     # print(request.args)
@@ -128,7 +181,7 @@ def update_table_status():
     print(content)
     print(type(content))
     print("-------------------")
-    mongo.db.TableStatus.find_one_and_update({"table_id" : content["table_id"]}, {"$set": {"table_status" : content["table_status"]}},upsert=True)
+    # mongo.db.TableStatus.find_one_and_update({"table_id" : content["table_id"]}, {"$set": {"table_status" : content["table_status"]}},upsert=True)
     documents = [doc for doc in mongo.db.TableStatus.find({})]
     pprint(json_util.dumps({'Table History': documents}))
     return json_util.dumps({'Table History': documents})
