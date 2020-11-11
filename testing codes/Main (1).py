@@ -81,65 +81,13 @@ headers= {}
 url_postman = "http://cleanerdash_deploy-nice-marmot-lf.cfapps.us10.hana.ondemand.com/tablestatus/update_workaround_yellow/"
 
 def status_yellow():
-    # res = requests.request("GET", update_table_status_url_workaround_yellow, headers=headers, data = payload)
     res = requests.request("GET", update_table_status_url_workaround_yellow)
-    # response = requests.request("POST", url, headers=headers, data = payload)
-    # pprint(res.text)
-    # pprint(res.status_code)
-    #if res.ok:
-        #print(res.json())
-    #else:
-        #print("JSON go boo boo")
 
 def status_red():
-    # res = requests.request("GET", update_table_status_url_workaround_red, headers=headers, data = payload)
     res = requests.request("GET", update_table_status_url_workaround_red)
-    # pprint(res.text)
-    # pprint(res.status_code)
 
 def status_green():
     res = requests.request("GET", update_table_status_url_workaround_green)
-    # pprint(res.text)
-    # pprint(res.status_code)g
-    
-
-# def clean_function():
-#     timer_clean = datetime.datetime.now()
-#     time.sleep(0.5)
-#     timer_leave = datetime.datetime.now()
-#     time.sleep(0.5)
-#     timer_sit = datetime.datetime.now()
-#     sitting_time = round(float((timer_leave - timer_sit).total_seconds()/60),4)
-#     cleaning_time = round(float((timer_clean - timer_leave).total_seconds()/60),4)
-#     payload = {
-#                 "timestamp" : timer_clean.strftime("%d/%m/%Y, %H:%M:%S"),
-#                 "eid" : 1,
-#                 "name" : "JORMASLOOT",
-#                 "table_id" : 1,
-#                 "time_sat" : timer_sit.strftime("%d/%m/%Y, %H:%M:%S"),
-#                 "sitting_duration" : sitting_time,
-#                 "cleaning_delay": cleaning_time
-#                 }
-#             # res = requests.post(update_cleaning_records_url_workaround, json = data)
-#     print(update_cleaning_records_url_workaround)
-#     res = requests.request("POST", update_cleaning_records_url_workaround, data=payload)
-#     print("You are sending this over:")
-#     print(res.text)
-#     print("ALALALAALALALALALLALLALALALALALALAAAL")
-
-
-# while True:
-#     print("\n--------------------------------------------\n")
-#     input_choice = input("What is your bidding master:")
-#     if input_choice == 'g':
-#         status_green()
-#     elif input_choice == 'y':
-#         status_yellow()
-#     elif input_choice == 'r':
-#         status_red()
-    # elif input_choice == 'c':
-    #     clean_function()
-
 
 
 while True:
@@ -171,6 +119,7 @@ while True:
             sitting_time = round(float((timer_leave - timer_sit).total_seconds()/60),4)
             cleaning_time = round(float((timer_clean - timer_leave).total_seconds()/60),4)
             # send to DB
+            # There is currently an error in the POST method
             # data = {
             #     "timestamp" : timer_clean.strftime("%d/%m/%Y, %H:%M:%S"),
             #     "eid" : cleaner_id,
@@ -181,11 +130,6 @@ while True:
             #     "cleaning_delay": cleaning_time
             #     }
             # res = requests.post(update_cleaning_records_url_workaround, json = data)
-            
             timer_sit = None
             timer_leave = None
             timer_clean = None
-           
-            
-                   
-    # Waiting for JSON to be sent over has yet to be coded. 3:40PM, 4/11

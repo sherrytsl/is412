@@ -9,6 +9,27 @@ from bson import json_util
 import os
 
 app = Flask(__name__)
+# CORS(app, headers='Content-Type')
+# app.config['CORS_HEADERS'] = 'Content-Type'
+# CORS(app, support_credentials=True)
+
+
+
+# url = "http://cleanerdash_deploy-nice-marmot-lf.cfapps.us10.hana.ondemand.com/tablestatus/update/"
+
+# payload = "{\r\n    \"table_id\" : 1,\r\n    \"table_status\" :  \"y\"\r\n}"
+# headers = {
+#   'Content-Type': 'application/json'
+# }
+
+# response = requests.request("POST", url, headers=headers, data = payload)
+
+# print(response.text.encode('utf8'))
+
+
+# db = 123 # SQLAlchemy(app)
+# http://CleanerDash_Deploy-nice-marmot-lf.cfapps.us10.hana.ondemand.com
+# client = MongoClient("mongodb+srv://james:root@cluster0.how3s.mongodb.net/CleanerDash?retryWrites=true&w=majority")
 
 app.config["MONGO_URI"] = "mongodb://b9UJXPNOtvai7SqE:fHTf8qKlYq3eprUF@10.11.241.2:60666/g2xtvEJCyZxcZ09V"
 mongo = PyMongo(app)
@@ -37,15 +58,24 @@ Call api.py(CLOUD deployed) with Main.py on RPi (API end point on cockpit ? conf
 talk to kaixian to link w ui (we need to make functions for him to access DB)
 """
 @app.route("/onetimeinsert")
+# @cross_origin(supports_credentials=True)
 def onetimeinsert():
-    # CReating tables and insert table & employee data
-
+    # RETRIEVE STATUS OF ALL TABLES
+    # db = mongo.db
+    # col = mongo.db["TableStatus"]
+    print ("MongoDB Database BEFORE:", mongo.db)
+    # mongo.createCollection( "CleaningRecords",
+    #     {
+    #         "table_id": "int",
+    #         "table_status": "string"
+    #     }
+    # )
     mongo.db.TableStatus.find_one_and_update({"table_id" : 1 }, {"$set": {"table_status" : "g"}},upsert=True)
     mongo.db.TableStatus.find_one_and_update({"table_id" : 2 }, {"$set": {"table_status" : "g"}},upsert=True)
     mongo.db.TableStatus.find_one_and_update({"table_id" : 3 }, {"$set": {"table_status" : "g"}},upsert=True)
-
+    
     mongo.db.CleaningRecords.find_one_and_update({"eid" : 1 }, {"$set": {"name" : "Kare En", "table_id" : 1, "time_sat" : "07/11/2020, 14:05:34", "sitting_duration" : 22.9, "cleaning_duration": 31}},upsert=True)
-
+    
     mongo.db.Employee.find_one_and_update({"eid" : 1 }, {"$set": {"firstName" : "Kare En", "lastName" : "Lim", "age" : 88, "assignedZone" : [1,2,3], "employeeType": "Cleaner", "password" : "karen123"}},upsert=True)
 
     # mongo.db.TableStatus.insert_one({"table_id" : 1, "table_status" : 'g'})
@@ -54,27 +84,32 @@ def onetimeinsert():
     print ("MongoDB Database AFTER:", mongo.db)
     return "Successful"
 
-
+#GET Kai Xian use this to RETRIEVE table status
 @app.route("/tablestatus")
+# @cross_origin(supports_credentials=True)
 def get_table_status():
     # RETRIEVE STATUS OF ALL TABLES
     documents = [doc for doc in mongo.db.TableStatus.find({})]
+    print("JAMEESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS")
+    pprint(documents)
+    print("JOSSSHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
     return json_util.dumps({'Table History': documents})
 
-
 @app.route("/employee")
+# @cross_origin(supports_credentials=True)
 def get_employee():
     # RETRIEVE ALL EMPLOYEE RECORDS
     documents = [doc for doc in mongo.db.Employee.find({})]
+    pprint(documents)
     return json_util.dumps({'Employee': documents})
 
-
 @app.route("/cleaningrecords")
+# @cross_origin(supports_credentials=True)
 def get_cleaningrecords():
     # RETRIEVE ALL CLEANING RECORDS
     documents = [doc for doc in mongo.db.CleaningRecords.find({})]
+    pprint(documents)
     return json_util.dumps({'Cleaning Record': documents})
-
 
 # WORKAROUND METHODS
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -101,6 +136,9 @@ def update_table_status_workaround_red():
 #POST Main.py will send timing data here (sit/leave/clean)
 # NEED TO CHANGE ALL STATIC VARIABLES TO VARIABLES FROM IOT MAIN.PY 
 @app.route("/cleaning_workaround/", methods=['GET', 'POST'])
+# @app.route("/cleaning/")
+# @accept(supports_credentials=True)
+# @cross_origin()
 def update_cleaning_workaround():
     content = request# JSON of cleaning data is sent through request and we take the json out and assign to content
     # process content here (Sort the json out to send to Mongo etc)
